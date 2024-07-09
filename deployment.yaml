@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: addon-api
+spec:
+  selector:
+    matchLabels:
+      app: search-engine-alpha
+  template:
+    metadata:
+      labels:
+        app: search-engine-alpha
+    spec:
+      containers:
+      - name: my-app
+        image: optimusprime123/search:latest
+        ports:
+        - containerPort: 5009
