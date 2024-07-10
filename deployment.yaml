@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: nginx:latest
+        image: httpd:latest
         ports:
         - containerPort: 5009
