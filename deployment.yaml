@@ -2,6 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: addon-api
+annotations:
+  argocd-image-updater.argoproj.io/image-list: myalias=docker.io     #Write repository name  # You can remove this annotation if you have already configured the gcr secret and are using the same secret to retrieve all GCR images in your deployments.
+  argocd-image-updater.argoproj.io/myalias.update-strategy: digest #There are several ways to update the image, but I'm using digest.
+  argocd-image-updater.argoproj.io/write-back-method: git  # We don't need the secret as mentioned in argocd doc because we already set it up via argocd console if you're using the same git repo.
+  argocd-image-updater.argoproj.io/git-branch: main 
+  argocd-image-updater.argoproj.io/myalias.force-update: "true"
 spec:
   replicas: 4
   selector:
