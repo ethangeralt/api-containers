@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: addon-api
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: search-engine-alpha
