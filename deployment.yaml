@@ -26,5 +26,7 @@ spec:
    selector:
      app: search-engine-alpha
    ports:
-       port: 80
-       targetPort: 9376
+       - name: http
+         protocol: TCP
+         port: 80
+         targetPort: 80
