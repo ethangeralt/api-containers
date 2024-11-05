@@ -1,4 +1,4 @@
-resource null_resource name {
+resource null_resource names {
   triggers = {
     trigger = value
   }
